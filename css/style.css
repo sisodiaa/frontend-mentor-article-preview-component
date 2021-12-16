@@ -41,6 +41,7 @@ body {
   border-radius: 1rem;
   background-color: var(--color-white);
   overflow: hidden;
+  box-shadow: 0 2rem 4rem -4rem var(--color-dark-grayish-blue);
 }
 .article__banner {
   overflow: hidden;
