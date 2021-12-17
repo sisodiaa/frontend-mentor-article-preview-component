@@ -177,6 +177,10 @@ body {
     }
   }
 
+  &__button > &__service {
+    display: none;
+  }
+
   &__share > &__button {
     background-color: var(--color-desaturated-blue);
 
