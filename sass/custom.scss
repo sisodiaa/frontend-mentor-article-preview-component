@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
 
+$breakpoint-mobile: 50.25em;
+
 :root {
   --color-desaturated-blue: hsl(214, 17%, 51%);
   --color-light-grayish-blue: hsl(210, 46%, 95%);
@@ -39,6 +41,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 13.5rem;
   width: 90%;
+  max-width: 48rem;
   border-radius: 1rem;
   background-color: var(--color-white);
   overflow: hidden;
@@ -186,6 +189,56 @@ body {
       mask-repeat: no-repeat;
       -webkit-mask-position: center;
       mask-position: center;
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-mobile) {
+  body {
+    font-size: 87.5%;
+  }
+
+  .article {
+    grid-template-columns: 18rem;
+    grid-template-rows: 1fr;
+
+    &__image {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 1;
+      width: 130%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__content {
+      grid-row: 1 / span 1;
+      grid-column: 2 / span 1;
+      padding-top: 1.75rem;
+    }
+
+    &__preview,
+    &__footer,
+    &__share {
+      padding-left: 3rem;
+      padding-right: 3.25rem;
+    }
+
+    &__preview {
+      margin-bottom: 0.75rem;
+    }
+
+    &__heading {
+      font-size: 1.4rem;
+      line-height: 1.4;
+    }
+
+    &__paragraph {
+      line-height: 1.35rem;
+    }
+
+    &__footer {
+      padding-top: 1rem;
+      padding-bottom: 2rem;
     }
   }
 }
