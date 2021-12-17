@@ -177,6 +177,12 @@ body {
   .article {
     grid-template-columns: 18rem;
     grid-template-rows: 1fr;
+    overflow: visible;
+  }
+  .article__banner {
+    overflow: hidden;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
   }
   .article__image {
     grid-row: 1/span 1;
@@ -207,6 +213,63 @@ body {
   .article__footer {
     padding-top: 1rem;
     padding-bottom: 2rem;
+  }
+  .article__button.tooltip {
+    position: relative;
+    display: block;
+    background-color: var(--color-desaturated-blue);
+  }
+  .article__button.tooltip::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -247%) rotate(45deg);
+    height: 70%;
+    width: 70%;
+    background-color: var(--color-dark-grayish-blue);
+    box-shadow: 0.75rem 0.75rem 1rem -0.4rem var(--color-desaturated-blue);
+    z-index: 200;
+  }
+  .article__button.tooltip::after {
+    background-image: none;
+    background-color: var(--color-white);
+    -webkit-mask-image: url(../images/icon-share.svg);
+    mask-image: url(../images/icon-share.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+  }
+  .article__service {
+    display: none;
+  }
+  .article__button.tooltip > .article__service {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -158%);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: var(--color-dark-grayish-blue);
+    color: var(--color-desaturated-blue);
+    align-items: center;
+    gap: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.345rem;
+    font-weight: 700;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    box-shadow: 0 1.5rem 1rem -1.4rem var(--color-desaturated-blue);
+  }
+  .article__button.tooltip > .article__service img {
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
   }
 }
 .attribution {
